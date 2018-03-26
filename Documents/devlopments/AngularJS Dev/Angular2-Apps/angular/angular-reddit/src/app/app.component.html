@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<form class="ui large form segment">
+  <h3 class="ui header">Add Link</h3>
+
+  <div class="field">
+    <label for="title">Title: </label>
+    <input name="title" #title>
+  </div>
+  <div class="field">
+    <label for="link">Link: </label>
+    <input link="link" #link>
+  </div>
+  <button (click)="addArticle(title, link)" class="ui positive right floted button">
+    Submit Link
+  </button>
+</form>
+
+<div class="ui grid posts">
+    <app-article *ngFor="let temp of articles"[article]="temp" (deleteArticle) ="deleteArticle($event)">
+
+    </app-article>
+
+</div>
